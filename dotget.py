@@ -11,3 +11,8 @@ def dig(data: object, path: str, default: object = None) -> object:
             return default
         current = current[part]
     return current
+
+
+def has_path(data: object, path: str) -> bool:
+    missing = object()
+    return dig(data, path, missing) is not missing

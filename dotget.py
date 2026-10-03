@@ -13,6 +13,10 @@ def dig(data: object, path: str, default: object = None) -> object:
     return current
 
 
+def dig_all(data: object, paths: list[str], default: object = None) -> dict[str, object]:
+    return {path: dig(data, path, default) for path in paths}
+
+
 def has_path(data: object, path: str) -> bool:
     missing = object()
     return dig(data, path, missing) is not missing

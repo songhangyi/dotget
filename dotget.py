@@ -20,3 +20,10 @@ def dig_all(data: object, paths: list[str], default: object = None) -> dict[str,
 def has_path(data: object, path: str) -> bool:
     missing = object()
     return dig(data, path, missing) is not missing
+
+
+def first_path(data: object, paths: list[str]) -> str:
+    for path in paths:
+        if has_path(data, path):
+            return path
+    return ""

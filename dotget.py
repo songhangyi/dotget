@@ -27,3 +27,7 @@ def first_path(data: object, paths: list[str]) -> str:
         if has_path(data, path):
             return path
     return ""
+
+
+def path_count(data: object, paths: list[str]) -> int:
+    return sum(1 for path in paths if has_path(data, path))

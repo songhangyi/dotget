@@ -31,3 +31,7 @@ def first_path(data: object, paths: list[str]) -> str:
 
 def path_count(data: object, paths: list[str]) -> int:
     return sum(1 for path in paths if has_path(data, path))
+
+
+def missing_paths(data: object, paths: list[str]) -> list[str]:
+    return [path for path in paths if not has_path(data, path)]

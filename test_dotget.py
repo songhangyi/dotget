@@ -1,6 +1,6 @@
 import unittest
 
-from dotget import dig, dig_all, first_path, has_path, path_count
+from dotget import dig, dig_all, first_path, has_path, missing_paths, path_count
 
 
 class DotgetTest(unittest.TestCase):
@@ -14,6 +14,7 @@ class DotgetTest(unittest.TestCase):
         self.assertEqual(first_path(data, ["a.c", "a.b"]), "a.b")
         self.assertEqual(first_path(data, ["a.c"]), "")
         self.assertEqual(path_count(data, ["a.b", "a.c"]), 1)
+        self.assertEqual(missing_paths(data, ["a.b", "a.c"]), ["a.c"])
         with self.assertRaises(ValueError):
             dig(data, "a..b")
 

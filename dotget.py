@@ -35,3 +35,7 @@ def path_count(data: object, paths: list[str]) -> int:
 
 def missing_paths(data: object, paths: list[str]) -> list[str]:
     return [path for path in paths if not has_path(data, path)]
+
+
+def present_paths(data: object, paths: list[str]) -> list[str]:
+    return [path for path in paths if has_path(data, path)]

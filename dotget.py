@@ -39,3 +39,7 @@ def missing_paths(data: object, paths: list[str]) -> list[str]:
 
 def present_paths(data: object, paths: list[str]) -> list[str]:
     return [path for path in paths if has_path(data, path)]
+
+
+def any_path(data: object, paths: list[str]) -> bool:
+    return path_count(data, paths) > 0

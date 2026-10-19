@@ -43,3 +43,9 @@ def present_paths(data: object, paths: list[str]) -> list[str]:
 
 def any_path(data: object, paths: list[str]) -> bool:
     return path_count(data, paths) > 0
+
+
+def all_paths(data: object, paths: list[str]) -> bool:
+    if not paths:
+        return False
+    return path_count(data, paths) == len(paths)

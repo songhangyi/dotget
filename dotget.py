@@ -49,3 +49,7 @@ def all_paths(data: object, paths: list[str]) -> bool:
     if not paths:
         return False
     return path_count(data, paths) == len(paths)
+
+
+def missing_count(data: object, paths: list[str]) -> int:
+    return len(missing_paths(data, paths))

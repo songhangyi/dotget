@@ -57,3 +57,10 @@ def missing_count(data: object, paths: list[str]) -> int:
 
 def present_count(data: object, paths: list[str]) -> int:
     return len(present_paths(data, paths))
+
+
+def partial(data: object, paths: list[str]) -> bool:
+    if not paths:
+        return False
+    found = present_count(data, paths)
+    return 0 < found < len(paths)

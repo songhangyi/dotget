@@ -64,3 +64,6 @@ def partial(data: object, paths: list[str]) -> bool:
         return False
     found = present_count(data, paths)
     return 0 < found < len(paths)
+
+def missing_any(data: object, paths: list[str]) -> bool:
+    return missing_count(data, paths) > 0

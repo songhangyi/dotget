@@ -1,6 +1,6 @@
 import unittest
 
-from dotget import all_paths, any_path, dig, dig_all, first_path, has_path, missing_count, missing_paths, partial, path_count, present_count, present_paths, missing_any
+from dotget import all_paths, any_path, dig, dig_all, first_path, has_path, missing_count, missing_paths, partial, path_count, present_count, present_paths, missing_any, found_none
 
 
 class DotgetTest(unittest.TestCase):
@@ -30,6 +30,9 @@ class DotgetTest(unittest.TestCase):
 
         self.assertTrue(missing_any(data, ["a.b", "a.c"]))
         self.assertFalse(missing_any(data, ["a.b"]))
+
+        self.assertTrue(found_none(data, ["a.c"]))
+        self.assertFalse(found_none(data, ["a.b"]))
 
 if __name__ == "__main__":
     unittest.main()
